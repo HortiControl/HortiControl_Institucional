@@ -26,8 +26,8 @@ function isInputVazio(modalRecebido) {
         if (input.value == null || input.value == "") {
             return true;
         }
-        return false;
     }
+    return false;
 }
 
 function fecharModal(modalRecebido) {
@@ -35,7 +35,7 @@ function fecharModal(modalRecebido) {
     limparFormulario();
 }
 
-btnCancelar.addEventListener("click",() => fecharModal(modal));
+btnCancelar.addEventListener("click", () => fecharModal(modal));
 btnClose.addEventListener("click", () => fecharModal(modal));
 
 window.addEventListener("click", (e) => {
@@ -59,7 +59,6 @@ function formatarMoeda(valor) {
     } else {
         valorFormato += ".00"
     }
-
     return Number(valorFormato).toFixed(2);
 }
 
@@ -100,7 +99,7 @@ async function buscarDados() {
                         <td>${produto.nome}</td>
                         <td><span class="tag ${definirCorTipo(produto.tipo)}">${produto.tipo}</span></td>
                         <td>${produto.tipoUnidade}</td>
-                        <td>${produto.preco}</td>
+                        <td>R$ ${produto.preco}</td>
                         <td><span class="tag ${definirCordEmbalagem(produto.embalagem)}">${produto.embalagem}</span></td>
                         <td class="actions">
                             <button class="btn-edit" data-id = "${produto.id}">✏️</button>
@@ -116,7 +115,7 @@ async function buscarDados() {
     btnsDelete.forEach(btn => {
         btn.addEventListener("click", () => {
             let id = btn.dataset.id;
-            onclick = deletarProduto(id);
+            deletarProduto(id);
         });
     });
 
@@ -125,7 +124,7 @@ async function buscarDados() {
             let id = btn.dataset.id;
             modalTitle.textContent = "Editar Produto";
             modal.style.display = "flex";
-            onclick = exibirDadosModal(id);
+            exibirDadosModal(id);
         });
     });
 }
@@ -160,7 +159,7 @@ async function atualizarProduto(idRecebido) {
             nome: inputNome.value,
             tipo: selectTipo.value,
             tipoUnidade: selectUnidade.value,
-            preco: inputPreco.value,
+            preco: formatarMoeda(inputPreco.value),
             embalagem: selectEmbalagem.value,
         })
     });
@@ -182,11 +181,10 @@ async function cadastrarProduto() {
                 nome: inputNome.value,
                 tipo: selectTipo.value,
                 tipoUnidade: selectUnidade.value,
-                preco: inputPreco.value,
+                preco: formatarMoeda(inputPreco.value),
                 embalagem: selectEmbalagem.value,
             })
         });
-
         buscarDados();
         fecharModal(modal);
     }
