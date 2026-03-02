@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #27ae60;
+}
+
+.header-buttons {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-entrar {
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px 25px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-cadastrar {
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px 25px;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* banner */
+.banner {
+    background-image: url(image\ 2.png);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 48px;
+    max-width: 500px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.btn-saiba-mais {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 30px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* sobre nos */
+.sobre-nos {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.sobre-nos .container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.sobre-nos h2 {
+    font-size: 36px;
+    min-width: 200px;
+    color: #333;
+}
+
+.sobre-nos p {
+    font-size: 16px;
+    line-height: 1.8;
+    flex: 1;
+}
+
+/* história  */
+.historia {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+.historia h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.historia-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.historia-texto {
+    flex: 1;
+}
+
+.historia-texto p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.historia-imagem {
+    flex: 0 0 350px;
+}
+
+.historia-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* proposito  */
+.proposito {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.proposito h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+}
+
+.card {
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 40px 30px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* serviços */
+.servicos {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+.servicos h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.servicos-card-unico {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.servicos-divisoes {
+    display: flex;
+}
+
+.servico-item {
+    flex: 1;
+    padding: 20px 30px;
+    text-align: center;
+    border-right: 2px solid #27ae60;
+}
+
+.servico-item:last-child {
+    border-right: none;
+}
+
+.servico-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.servico-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* footer */
+.footer {
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.footer-logo,
+.footer-contato,
+.footer-explorar {
+    flex: 1;
+}
+
+.footer h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: black;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: black;
+}
+
+.footer-explorar a {
+    color: black;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
